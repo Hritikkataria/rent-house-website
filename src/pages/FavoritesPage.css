@@ -1,0 +1,134 @@
+.favorites-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.favorites-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.favorites-header h1 {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.favorites-header p {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+.favorites-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.clear-favorites-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-favorites-btn:hover {
+  background-color: #c82333;
+}
+
+.favorites-count {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.favorite-item {
+  height: 100%;
+}
+
+.no-favorites {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.no-favorites-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.no-favorites h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.no-favorites p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.browse-properties-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.browse-properties-btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .favorites-header h1 {
+    font-size: 2.3rem;
+  }
+  
+  .favorites-actions {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .favorites-count {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+} 

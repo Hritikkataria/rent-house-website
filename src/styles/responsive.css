@@ -1,0 +1,278 @@
+/* Responsive Breakpoints
+ * xs: 0-575px (phones)
+ * sm: 576px-767px (large phones/small tablets)
+ * md: 768px-991px (tablets)
+ * lg: 992px-1199px (desktops)
+ * xl: 1200px+ (large desktops)
+ */
+
+/* Mobile-first approach - these variables can be imported and used in other CSS files */
+:root {
+  --container-padding: 1rem;
+  --grid-gap: 1rem;
+  --card-min-width: 100%;  /* Full width on smallest screens */
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {
+  :root {
+    --container-padding: 1.5rem;
+    --grid-gap: 1.5rem;
+    --card-min-width: 250px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+    --grid-gap: 2rem;
+    --card-min-width: 280px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) {
+  :root {
+    --container-padding: 2.5rem;
+    --grid-gap: 2rem;
+    --card-min-width: 300px;
+  }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+  :root {
+    --container-padding: 3rem;
+    --grid-gap: 2.5rem;
+    --card-min-width: 350px;
+  }
+}
+
+/* Utility classes for responsive containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+  gap: var(--grid-gap);
+}
+
+/* Responsive Utility Classes for RentNest
+-------------------------------------------------- */
+
+/* Responsive display classes */
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-grid {
+  display: grid !important;
+}
+
+/* Responsive visibility helpers */
+.hide-xs {
+  display: none !important;
+}
+
+@media (min-width: 576px) {
+  .hide-xs {
+    display: initial !important;
+  }
+  
+  .show-xs-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .show-xs-only {
+    display: initial !important;
+  }
+}
+
+/* Common screen-size visibility classes */
+@media (min-width: 576px) {
+  .d-sm-none {
+    display: none !important;
+  }
+  
+  .d-sm-block {
+    display: block !important;
+  }
+  
+  .d-sm-flex {
+    display: flex !important;
+  }
+  
+  .d-sm-grid {
+    display: grid !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+  
+  .d-md-block {
+    display: block !important;
+  }
+  
+  .d-md-flex {
+    display: flex !important;
+  }
+  
+  .d-md-grid {
+    display: grid !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-none {
+    display: none !important;
+  }
+  
+  .d-lg-block {
+    display: block !important;
+  }
+  
+  .d-lg-flex {
+    display: flex !important;
+  }
+  
+  .d-lg-grid {
+    display: grid !important;
+  }
+}
+
+/* Responsive spacing utilities */
+.mt-auto { margin-top: auto !important; }
+.mb-auto { margin-bottom: auto !important; }
+.ml-auto { margin-left: auto !important; }
+.mr-auto { margin-right: auto !important; }
+
+/* Responsive text alignment */
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+@media (min-width: 576px) {
+  .text-sm-center {
+    text-align: center !important;
+  }
+  
+  .text-sm-left {
+    text-align: left !important;
+  }
+  
+  .text-sm-right {
+    text-align: right !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-md-center {
+    text-align: center !important;
+  }
+  
+  .text-md-left {
+    text-align: left !important;
+  }
+  
+  .text-md-right {
+    text-align: right !important;
+  }
+}
+
+/* Responsive flexbox utilities */
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+@media (min-width: 576px) {
+  .flex-sm-column {
+    flex-direction: column !important;
+  }
+  
+  .flex-sm-row {
+    flex-direction: row !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-md-column {
+    flex-direction: column !important;
+  }
+  
+  .flex-md-row {
+    flex-direction: row !important;
+  }
+}
+
+/* Container helper class */
+.container-fluid {
+  width: 100%;
+  padding-right: var(--container-padding);
+  padding-left: var(--container-padding);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Responsive width utilities */
+.w-100 {
+  width: 100% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-25 {
+  width: 25% !important;
+}
+
+/* Responsive grid classes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(var(--item-spacing) / -2);
+  margin-left: calc(var(--item-spacing) / -2);
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: calc(var(--item-spacing) / 2);
+  padding-left: calc(var(--item-spacing) / 2);
+} 
